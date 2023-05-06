@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 def extract_all_url(from_soup):
-    tags = from_soup.find_all('a', )
+    tags = from_soup.select('a', )
     # print(tags)
     links = [tag.get('href') for tag in tags]
 
@@ -32,6 +32,9 @@ def add_if_not_exists(traversed, new_urls, url_list):
             url_list.append(u)
 
 
+def get_content(from_soup):
+    tags = from_soup.select("[x-data-value]")
+    return tags
 
 
 if __name__ == '__main__':
@@ -55,3 +58,5 @@ if __name__ == '__main__':
 
         if len(untraversed_links) == 0:
             url_exists = False
+
+        get_content(soup)
