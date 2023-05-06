@@ -1,0 +1,80 @@
+CodeMaster 2023 - First Session
+00:57:45
+3/3
+1
+2
+3
+Crawler is a software program that visits the page, reads its content, and follows links to other pages. It extracts information such as the page's title, text, and links.
+
+
+
+You are expected to develop a simple crawler (you can use a framework/library for finding elements in HTML, you do not need to implement DOM parser yourself) to meet the requirements listed below:
+
+Starting from a given "startLink" crawler should start crawling. Only one "startLink" will be provided.
+Crawler should detect any links that are added to the web page to enable users to navigate through the website.
+Links should be extracted from anchor tags
+Links sharing the same domain name with the start link should be handled. Other links should be ignored
+Links with a purpose other than navigation through the website should be ignored
+It's not a requirement for a link to be visible on the user interface
+Crawler should continue crawling until there is no link at the leaves that it visits.
+On each crawled page, the crawler should look for specific HTML tags/elements and append the data obtained from them to decide the output. Requirements for processing each page's content are listed below:
+Tags should contain attributes:
+"x-data-index"
+"x-data-value"
+Values of "x-data-value" attributes should be appended in the order specified with the value of the "x-data-index" attribute
+Crawler should find all the tags complying with the rules above in all the pages found
+No missing index should exist from min(x-data-index) to max(x-data-index)
+You may find same "x-data-index" values in different pages, you should ignore the duplicates and add only one character per index.
+
+
+Explanation of the flow with a sample diagram:
+
+
+
+
+
+You can verify your solution with the example data provided below:
+
+Start Link: https://cm2023.obss.io/2165506a-18f1-4322-a260-bd8b6dc2240e?lang=EN
+Output: arN7TcjC4ve8W1xi9e4joLMQ3JQF06nsj7ZA8sYDtGvN0HPc86H2waol4S3yrFgLq0QJQEqUYJwlaW1o1tic944CdCvfrWJxEj9zWQyLPfFEJEIUspE6S9GN3CIB3EUMmusFxu1Y30N4E5h1mon22kPncoGVDQKU74dRDCRzdhLfSvdCeMocxi81MV
+
+
+You are expected to provide an output for the below input:
+
+Start Link: https://cm2023.obss.io/3c6ddc3f-ade5-4910-a5fc-a0b00a8c2b61?lang=EN
+
+
+Assumptions:
+
+Given example reflects the challenges of the actual problem. Verification against example should be enough to decide the correctness of the developed solution
+Values of "x-data-index" are starting from "1"
+21 unique web pages and 186 unique "x-data-index" should be found while crawling
+All valid links will follow the pattern: protocol://domain-name/path
+
+
+Constraints:
+
+There are no efficiency or performance limitations for the solution
+There are no language limitations for the problem. You can use the programming language you feel comfortable
+It's expected that the solution is provided by means of developing proprietary software. 3rd party libraries may be used as part of your software solution. But the problem should not be solved solely by just using a program not writing code at all. Source codes written to solve the problem should be sent to the repository (credentials listed below) before finishing your Witwiser session. Commits after finishing the session will be ignored
+It's expected that each participant will develop a solution on their own. No help should be taken in any way. Usage of the internet is allowed. However, solutions should be unique. Providing solutions directly obtained from the internet (or someone else) will not be accepted. It's allowed to search for supportive content, not for a direct solution. Any violation may lead solution to be discarded
+
+
+
+
+Assessment:
+
+Output is matched against expected output. To earn a point:
+Your output should be correct
+Your final solution should exist in the repository
+If the output is correct but there is no related source code in the repository, the solution is discarded
+
+
+Important:
+
+The event committee holds the right to discard a solution if any suspicious activity is detected. Some activities like source code plagiarism may result in participant's all solutions being discarded, even if it is detected only for a single challenge
+Only the expected output should be provided as the answer, source code should be committed and pushed to the given repository.
+0/1000
+
+Mark This Question
+
