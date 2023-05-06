@@ -1,4 +1,6 @@
 import re
+from crypto.Cipher import AES
+import base64
 
 
 def get_file_content(file):
@@ -6,12 +8,12 @@ def get_file_content(file):
         return f.read()
 
 
-def decode_content(content):
-    return content
+def decode_content(content)->str:
+    return base64.b64decode(content).decode('utf-8')
 
 
 def decrypt_content(content, key):
-    return content
+    return None
 
 
 page_delimiter = '~@~'
