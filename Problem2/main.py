@@ -8,12 +8,13 @@ def get_file_content(file):
         return f.read()
 
 
-def decode_content(content)->str:
-    return base64.b64decode(content).decode('utf-8')
+def decode_base64(content):
+    return base64.b64decode(content)
 
 
 def decrypt_content(content, key):
-    return None
+    cipher = AES.new(key, AES.MODE_ECB)
+    return cipher.decrypt(content)
 
 
 page_delimiter = '~@~'
